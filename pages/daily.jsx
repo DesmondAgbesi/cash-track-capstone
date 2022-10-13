@@ -36,7 +36,7 @@ export default function Daily () {
   };
 
   const handleDelete = (id) => {
-    const newTasks = data.filter((task) => task.id !==id);
+    const newTasks = data.filter((task) => task.id ===id);
     setValue(newTasks);
   };
   

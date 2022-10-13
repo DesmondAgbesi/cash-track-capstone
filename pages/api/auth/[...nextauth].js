@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import db from "../../../lib/dbConnect";
 import User from "../../../models/user";
+import bcrypt from "bcryptjs";
 
 export default NextAuth({
   providers: [
@@ -10,6 +11,8 @@ export default NextAuth({
       async authorize(credentials) {
         //connect to database
         await db.connect();
+
+        console.log(credentials)
 
         // find user
         const user = await User.findOne({
@@ -23,7 +26,7 @@ export default NextAuth({
         if (user && bcrypt.compareSync(credentials.password, user.password)) {
           return {
             _id: user._id,
-            fullName: user.firstName,
+            fullName: user.fullName,
             email: user.email,
           };
         }
@@ -32,7 +35,7 @@ export default NextAuth({
     }),
   ],
   pages: {
-    signin: "/auth/login",
-    error:"auth/login"
+    signIn: "/auth/login",
+    error:"/auth/login"
   },
 });

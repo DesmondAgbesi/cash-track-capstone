@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 :root{
   --color-yellow : #f9c74f;
   --color-purple  : #9d4edd;
@@ -10,7 +11,7 @@
 
 @layer components{
   .abril {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Kaushan Script', cursive;
   }
  
 

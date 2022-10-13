@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { signin } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { BiHide } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -12,7 +12,7 @@ function RegisterForms() {
     password: "",
   });
   const [error, setError] = useState("");
-  const router = useRouter;
+  const router = useRouter();
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -20,7 +20,7 @@ function RegisterForms() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await signin("credentials", {
+    const result = await signIn("credentials", {
       //...data,
       email: data.email,
       password: data.password,
@@ -69,6 +69,7 @@ function RegisterForms() {
               {/* <label>Password</label> */}
               <input
                 type="password"
+                name="password"
                 placeholder="Password"
                 className="form-input login-inp"
                 onChange={handleChange}
@@ -97,7 +98,7 @@ function RegisterForms() {
 
             <div className="text-center text-grey-400 text-sm mt-4 ">
               <h1 className="">
-                Don't have an account?{" "}
+                Don't have an account?
                 <Link href="/register">
                   <a>
                     <span className="text-indigo-500">Sign up</span>

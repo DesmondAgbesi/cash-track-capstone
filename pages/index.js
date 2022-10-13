@@ -4,9 +4,11 @@ import Link from "next/link";
 
 function Home() {
   return (
-    <body className="h-full">
-      <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 w-full text-gray-800">
-        <div className="flex justify-center items-center mx-auto max-w-6xl h-full max-h-[calc(100vh_-_84px)] ">
+    <body className="h-screen">
+      <div className="absolute w-[30%] h-full  right-0 bg-gradient-to-r from-violet-500 to-fuchsia-500 z-0">
+        </div> 
+      {/* <div className="bg-gradient-to-r w-full text-gray-800" /* from-violet-500 to-fuchsia-500 > */}
+        <div className="absolute flex justify-center items-center ml-[250px] max-w-6xl h-full max-h-[calc(100vh_-_84px)] z-10">
           <div className="grid md:grid-cols-2  p-9 ">
             {/* Chart on the left side of the screen */}
             <div className="text-left text-grey-500 my-auto">
@@ -39,7 +41,7 @@ function Home() {
             {/* //Input Forms on the right side of the screen */}
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </body>
   );
 }

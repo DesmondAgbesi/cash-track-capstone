@@ -8,7 +8,7 @@ async function handler(req, res) {
     return;
   }
 
-  const { firstName, lastName, email, password } = req.body;
+  const { fullName, email, password } = req.body;
 
   await db.connect();
 
@@ -22,8 +22,7 @@ async function handler(req, res) {
   const hashedPassword = await bcrypt.hash(password, 12);
 
   const user = await User.create({
-    firstName,
-    lastName,
+    fullName,
     email,
     password: hashedPassword,
   });

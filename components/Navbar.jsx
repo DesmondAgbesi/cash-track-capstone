@@ -1,12 +1,18 @@
 import Link from 'next/link'
 import React from 'react'
+import { GrMoney } from "react-icons/gr"
 
 function Navbar() {
   return (
-    <div className='flex justify-between px-28 py-3 z-50 sticky top-0'>
-      <div className>
-        <img src="" alt="" />
-        <h1 className='abril  text-xl'>Cash <span className='bg-indigo-500 text-white px-2'>Track</span></h1>
+    <div className='flex justify-between px-28 py-2 z-50 sticky top-0'>
+      <div className="flex gap-3">
+        {/* <img src="/img/logo.png" alt="" className='h-14 w-20'/> */}
+        <div className='flex justify-center items-center'>
+          <GrMoney className='h-7 w-7 text-yellow-500'/>
+        </div>
+        <div>
+          <h1 className='abril  text-xl'>cash<span className='abril'>Track</span></h1>
+        </div>
       </div>
       <div>
         <ul className='flex gap-4 font-bold text-gray-400'>
